@@ -91,5 +91,4 @@ RUN docker-php-ext-install zip
 RUN ["/bin/bash", "-c", "debconf-set-selections <<< \"postfix postfix/mailname string replace.with.your.own.domain.com\""]
 RUN ["/bin/bash", "-c", "debconf-set-selections <<< \"postfix postfix/main_mailer_type string 'Internet Site'\""]
 RUN apt-get install -y postfix
-RUN apt-get install -y cron
-
+RUN pear install --alldeps Mail Mail_Mime 
