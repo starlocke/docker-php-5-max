@@ -18,6 +18,7 @@ RUN docker-php-ext-install fileinfo
 RUN apt-get install -y libssl-dev
 RUN docker-php-ext-install ftp
 RUN apt-get install -y libpng-dev libjpeg-dev libgif-dev libxpm-dev
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install gettext
 #RUN apt-get update
